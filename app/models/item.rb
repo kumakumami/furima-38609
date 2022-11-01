@@ -17,7 +17,7 @@ belongs_to :shipping
 belongs_to :delivery_days
 validates :category_id, numericality: { other_than: 1 , message: "can't be blank"}
 validates :condition_id, numericality: { other_than: 1 , message: "can't be blank"}
-validates :state_id, numericality: { other_than: 1 , message: "can't be blank"}
+validates :state_id, numericality: { other_than: 0 , message: "can't be blank"}
 validates :shipping_id, numericality: { other_than: 1 , message: "can't be blank"}
 validates :delivery_days_id, numericality: { other_than: 1 , message: "can't be blank"}
 
