@@ -51,15 +51,35 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Delivery day can't be blank")
       end
-      it 'priceが空だと出品できない' do
-        @item.item_price = nil
-        @item.valid?
-        expect(@item.errors.full_messages).to include('Item price Out of setting range')
-      end
+    it 'categoryが---の項目が選択されている場合は出品できない' do
+      @item.category_id = 1
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Category can't be blank")
+    end
+    it 'conditionが---の項目が選択されている場合は出品できない' do
+      @item.condition_id = 1
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Condition can't be blank")
+    end
+    it 'stateが---の項目が選択されている場合は出品できない' do
+      @item.state_id = 0
+      @item.valid?
+      expect(@item.errors.full_messages).to include("State can't be blank")
+    end
+    it 'shippingが---の項目が選択されている場合は出品できない' do
+      @item.shipping_id = 1
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Shipping can't be blank")
+    end
+    it 'delivery_dayが---の項目が選択されている場合は出品できない' do
+      @item.delivery_day_id = 1
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Delivery day can't be blank")
+    end
       it 'priceが全角数字だと出品できない' do
         @item.item_price = '２０００'
         @item.valid?
-        expect(@item.errors.full_messages).to include('Item price Half-width number')
+        expect(@item.errors.full_messages).to include('Item price is not a number')
       end
       it 'priceが299だと出品できない' do
         @item.item_price = '299'
