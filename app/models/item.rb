@@ -20,5 +20,5 @@ class Item < ApplicationRecord
   validates :condition_id, numericality: { other_than: 1, message: "can't be blank" }
   validates :state_id, numericality: { other_than: 0, message: "can't be blank" }
   validates :shipping_id, numericality: { other_than: 1, message: "can't be blank" }
-  validates :delivery_day_id, numericality: { other_than: 1, message: "can't be blank" }
+  validates :deliveryday_id, numericality: { other_than: 1, message: "can't be blank" }
 end

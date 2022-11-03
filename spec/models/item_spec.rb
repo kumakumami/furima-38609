@@ -46,10 +46,10 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipping can't be blank")
       end
-      it 'delivery_dayが未選択だと出品できない' do
-        @item.delivery_day_id = nil
+      it 'deliverydayが未選択だと出品できない' do
+        @item.deliveryday_id = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery day can't be blank")
+        expect(@item.errors.full_messages).to include("Deliveryday can't be blank")
       end
       it 'categoryが---の項目が選択されている場合は出品できない' do
         @item.category_id = 1
@@ -71,10 +71,10 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipping can't be blank")
       end
-      it 'delivery_dayが---の項目が選択されている場合は出品できない' do
-        @item.delivery_day_id = 1
+      it 'deliverydayが---の項目が選択されている場合は出品できない' do
+        @item.deliveryday_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery day can't be blank")
+        expect(@item.errors.full_messages).to include("Deliveryday can't be blank")
       end
       it 'priceが全角数字だと出品できない' do
         @item.item_price = '２０００'
