@@ -5,7 +5,7 @@ FactoryBot.define do
     condition_id { 2 }
     category_id { 2 }
     state_id { 2 }
-    delivery_day_id { 2 }
+    deliveryday_id { 2 }
     item_price { '9999' }
     shipping_id { 2 }
 
