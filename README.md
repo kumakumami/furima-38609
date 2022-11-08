@@ -30,7 +30,7 @@
 | category_id|  integer | null: false |
 | state_id|  integer| null: false |
 | shipping_id|  integer | null: false |
-| delivery_day_id|  integer| null: false |
+| deliveryday_id|  integer| null: false |
 | item_price | integer | null: false |
 | user | references | null: false,foreign_key: true |
 
