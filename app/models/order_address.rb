@@ -1,6 +1,6 @@
 class OrderAddress
   include ActiveModel::Model
-  attr_accessor  :user_id,:item_id, :zip,:state_id,:city,:addressline1,:addressline2,:tell,:order_id
+  attr_accessor  :user_id,:item_id, :zip,:state_id,:city,:addressline1,:addressline2,:tell
   
   
   with_options presence: true do
@@ -10,7 +10,6 @@ class OrderAddress
     validates  :city
     validates  :addressline1
     validates  :tell,format: {with: /\A[0-9]{11}\z/ }
-    validates  :order_id
   end
   validates :state_id, numericality: { other_than: 0, message: "can't be blank" }
 
@@ -18,6 +17,4 @@ class OrderAddress
     order = Order.create(item_id: item_id, user_id: user_id)
     Address.create(zip: zip, state_id: state_id, city: city, addressline1: addressline1, addressline2: addressline2, tell:tell, order_id: order.id)
   end
-end
-
 end
