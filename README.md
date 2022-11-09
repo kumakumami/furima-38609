@@ -18,7 +18,7 @@
 ### Association
 
 - has_many :items
-- has_many :buyers
+- has_many :orders
 
 ## items テーブル
 
@@ -37,7 +37,7 @@
 ### Association
 
 - belongs to :user
-- has_one :buyer
+- has_one :order
 - belongs_to_active_hash :category
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :state
@@ -71,5 +71,5 @@
 
 ### Association
 
-- belongs_to :buyer
+- belongs_to :order
 - belongs_to_active_hash :state
