@@ -44,7 +44,7 @@
 - belongs_to_active_hash :shipping
 - belongs_to_active_hash :delivery_days
 
-## buyers テーブル
+## orders テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -67,7 +67,7 @@
 | addressline1 | string | null: false |
 | addressline2 | string |  
 | tell | string | null: false |
-| buyer  | references | null: false, foreign_key: true |
+| order  | references | null: false, foreign_key: true |
 
 ### Association
 
