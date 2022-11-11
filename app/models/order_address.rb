@@ -9,7 +9,7 @@ class OrderAddress
     validates  :zip, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
     validates  :city
     validates  :addressline1
-    validates  :tell,format: {with: /\A[0-9]{11}\z/ }
+    validates  :tell,format: {with: /\A\d{10,11}\z/}
   end
   validates :state_id, numericality: { other_than: 0, message: "can't be blank" }
 
