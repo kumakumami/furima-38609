@@ -6,6 +6,7 @@ FactoryBot.define do
     addressline1 { '1-1' }
     addressline2 { 'home' }
     tell { '1234567890' }
+    token {"tok_abcdefghijk00000000000000000"}
     
   end
 end
