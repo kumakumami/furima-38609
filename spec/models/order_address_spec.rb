@@ -26,7 +26,7 @@ RSpec.describe OrderAddress, type: :model do
         expect(@order_address.errors.full_messages).to include("Zip can't be blank")
       end
       it 'postal_codeが半角のハイフンを含んだ正しい形式でないと保存できないこと' do
-        @order_address.zip = 1234567
+        @order_address.zip = 1_234_567
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include('Zip is invalid. Include hyphen(-)')
       end
@@ -36,17 +36,17 @@ RSpec.describe OrderAddress, type: :model do
         expect(@order_address.errors.full_messages).to include("State can't be blank")
       end
       it 'cityが空だと保存できないこと' do
-        @order_address.city = " "
+        @order_address.city = ' '
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("City can't be blank")
       end
       it 'addlessline1が空だと保存できないこと' do
-        @order_address.addressline1 = " "
+        @order_address.addressline1 = ' '
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Addressline1 can't be blank")
       end
       it 'tellが空だと保存できないこと' do
-        @order_address.tell = " "
+        @order_address.tell = ' '
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Tell can't be blank")
       end
@@ -75,12 +75,12 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("User can't be blank")
       end
-        it 'itemが紐付いていないと保存できないこと' do
-          @order_address.item_id = nil
-          @order_address.valid?
-          expect(@order_address.errors.full_messages).to include("Item can't be blank")
+      it 'itemが紐付いていないと保存できないこと' do
+        @order_address.item_id = nil
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include("Item can't be blank")
       end
-      it "tokenが空では登録できないこと" do
+      it 'tokenが空では登録できないこと' do
         @order_address.token = nil
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Token can't be blank")
