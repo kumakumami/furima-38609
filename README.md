@@ -18,7 +18,7 @@
 ### Association
 
 - has_many :items
-- has_many :buyers
+- has_many :orders
 
 ## items テーブル
 
@@ -37,14 +37,14 @@
 ### Association
 
 - belongs to :user
-- has_one :buyer
+- has_one :order
 - belongs_to_active_hash :category
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :state
 - belongs_to_active_hash :shipping
 - belongs_to_active_hash :delivery_days
 
-## buyers テーブル
+## orders テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -67,9 +67,9 @@
 | addressline1 | string | null: false |
 | addressline2 | string |  
 | tell | string | null: false |
-| buyer  | references | null: false, foreign_key: true |
+| order  | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :buyer
+- belongs_to :order
 - belongs_to_active_hash :state
